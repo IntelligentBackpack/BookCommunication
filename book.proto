@@ -8,7 +8,7 @@ option java_package = "book.communication";
 // message, enum should be define in package level 
 option java_multiple_files = true;
 
-message AddBook {
+message BookActions_WithPermission {
     string email_esecutore = 1;
     Book Libro = 2; 
 }
@@ -18,13 +18,26 @@ message RegisterRFID {
     string ISBN = 2;
 }
 
+message BuyBook {
+    string ISBN = 1;
+    string RFID = 2;
+    string emailCompratore = 3;
+}
+
 message Library {
     int32 ID = 1;
     string Email = 2;
 }
 
+message Copy {
+    string RFID = 1; 
+    string ISBN = 2;
+    int32 ID_Libreria = 3;
+    string Email_Proprietario = 4;
+}
+
 message Book {
-    int32 ISBN = 1;
+    string ISBN = 1;
     string Titolo = 2;
     string Autore = 3;
     Data Data_Pubblicazione = 4;
