@@ -53,3 +53,8 @@ message BasicMessage {
     string message = 1;
     string message2 = 2;
 }
+
+message multipleRFID {
+    string email = 1;
+    repeated string RFID = 2;
+}
